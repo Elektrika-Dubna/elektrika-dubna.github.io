@@ -12,6 +12,66 @@
     <meta name="keywords" content="электрик Дубна, электромонтаж Дубна, услуги электрика, электрик услуги, электромонтажные работы, установка розеток, монтаж освещения, ремонт электропроводки, электрик на дом, вызов электрика">
     
     <style>
+        /* Контейнер для боковых фото */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стили для боковых фото */
+.side-photo {
+    width: 28%;
+    flex-shrink: 0;
+}
+
+.side-photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.side-photo img:hover {
+    transform: scale(1.05);
+}
+
+/* Центральный контент */
+.hero-content {
+    flex: 1;
+    text-align: center;
+    min-width: 350px;
+    max-width: 500px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 968px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .side-photo {
+        width: 80%;
+        max-width: 400px;
+    }
+    
+    .side-photo img {
+        height: 250px;
+    }
+    
+    .hero-content {
+        order: -1; /* Контент сверху */
+        min-width: auto;
+    }
+}
         /* Сброс стилей */
         * {
             margin: 0;
@@ -125,7 +185,7 @@
     <section id="home">
     <div class="hero-container">
         <!-- Левое фото -->
-        <div class="hero-image">
+        <div class="side-photo">
             <img src="images/photo8.jpg" alt="Электромонтажные работы">
         </div>
         
@@ -137,7 +197,7 @@
         </div>
         
         <!-- Правое фото -->
-        <div class="hero-image">
+        <div class="side-photo">
             <img src="images/photo9.jpg" alt="Установка электрооборудования">
         </div>
     </div>
@@ -239,6 +299,7 @@
 </html>
 </body>
 </html>
+
 
 
 
