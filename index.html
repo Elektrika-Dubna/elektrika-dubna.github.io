@@ -126,6 +126,7 @@
             overflow: hidden; 
             box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
             transition: all 0.3s; 
+            cursor: pointer;
         }
         
         .gallery-item:hover { 
@@ -138,6 +139,42 @@
             height: 220px; 
             object-fit: cover; 
             display: block; 
+        }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: #e74c3c;
         }
         
         /* Контакты */
@@ -212,6 +249,17 @@
             nav ul li { margin: 10px 0; }
             h1 { font-size: 2.2rem; }
             .gallery { grid-template-columns: 1fr; }
+            
+            .modal-content {
+                max-width: 95%;
+                max-height: 80%;
+            }
+            
+            .close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -244,6 +292,12 @@
         </ul>
     </nav>
 
+    <!-- Модальное окно -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <!-- Секции -->
     <section id="home">
         <div class="hero-container">
@@ -268,12 +322,8 @@
 
     <section id="about">
         <h2>О нашей компании</h2>
-        <p>Профессиональные услуги электрика в Дубне и ближайшие города.</p>
-        <p>Мы предлагаем полный спектр электромонтажных работ: от установки розеток до полной замены электропроводки,и оборудования.</p> 
-        <p>Наши электрики имеют большой опыт работы и выполняют задачи любой сложности быстро и качественно.</p>
-        <p>Вызов электрика на дом в Дубне, электромонтаж в квартирах и частных домах,предприятиях,ремонт электрооборудования.</p>
-        <p> Гарантия на все виды работ!</p>
-        <a href="#contact" class="btn">Заказать выезд электрика</a>
+        <p>Профессиональные услуги электрика в Дубне и районе. Мы предлагаем полный спектр электромонтажных работ: от установки розеток до полной замены электропроводки. Наши электрики имеют большой опыт работы и выполняют задачи любой сложности быстро и качественно.</p>
+        <p>Вызов электрика на дом в Дубне, электромонтаж в квартирах и частных домах, ремонт электрооборудования. Гарантия на все виды работ!</p>
     </section>
 
     <section id="services">
@@ -299,32 +349,31 @@
             <p>• Демонтаж старой электропроводки</p>
             <p>• Демонтаж/Монтаж старых и новых выключателей и розеток</p>
             <p>• Монтаж эл. щита и защитного отключения</p>
-            <a href="#contact" class="btn">Заказать выезд электрика</a>
         </div>
     </section>
 
     <section id="gallery">
         <h2>Наши работы</h2>
         <div class="gallery">
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo1.jpg')">
                 <img src="images/photo1.jpg" alt="Проект 1" class="gallery-img">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo2.jpg')">
                 <img src="images/photo2.jpg" alt="Проект 2" class="gallery-img">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo3.jpg')">
                 <img src="images/photo3.jpg" alt="Проект 3" class="gallery-img">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo4.jpg')">
                 <img src="images/photo4.jpg" alt="Проект 4" class="gallery-img">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo5.jpg')">
                 <img src="images/photo5.jpg" alt="Проект 5" class="gallery-img">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo6.jpg')">
                 <img src="images/photo6.jpg" alt="Проект 6" class="gallery-img">
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openModal('images/photo7.jpg')">
                 <img src="images/photo7.jpg" alt="Проект 7" class="gallery-img">
             </div>
         </div>
@@ -364,8 +413,37 @@
         
         <a href="#home" class="btn">На главную</a>
     </section>
+
+    <script>
+        // Функция для открытия модального окна
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = imageSrc;
+        }
+        
+        // Функция для закрытия модального окна
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+        
+        // Закрытие по клику на крестик
+        document.querySelector('.close').addEventListener('click', closeModal);
+        
+        // Закрытие по клику вне изображения
+        document.getElementById('imageModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Закрытие по клавише ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
