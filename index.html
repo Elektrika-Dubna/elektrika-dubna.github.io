@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой одностраничный сайт</title>
+    <style>
+        /* Сброс стилей */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Навигация */
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* Секции */
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Главный экран */
+        #home {
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Остальные секции */
+        #about { background: #e2e2e2; }
+        #services { background: #d1d1d1; }
+        #contact { background: #c1c1c1; }
+
+        /* Заголовки */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Кнопка */
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Секции -->
+    <section id="home">
+        <h1>Электрики Дубна,Талдом,Кимры</h1>
+        <a href="#contact" class="btn">Связаться с нами</a>
+    </section>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы команда профессионалов занимаемся элетромонтажом любой сложности,бригада состоит от 1го до 4х человек.</p>
+    </section>
+
+    <section id="services">
+        <h2>Наши услуги</h2>
+        
+<p>Поиск неисправности</p>
+<p>Установка и замена автоматов</p>
+<p>Установка и зампна электрических счетчиков</p>
+<p>Замена ламп</p>
+<p>Замена партонов в люстрах,светильниках,бра</p>
+<p>Монтаж,замена люстр,светильников,бра</p>
+<p>Перенос розеток,выключателей</p>
+<p>Ремонт,замена,установка розеток выключателей</p>
+<p>Установка,замена кнопок электрических звонков</p>
+<p>Установка и замена розеток/вилок электрической плиты</p>
+<p>Подключение любой бытовой техники и электроприборов</p>
+<p>Организация проводки</p>
+<p>Установка электрического счетчика</P
+<p>Монтаж розеток и выключателей</p>
+<p>Подключение светильников и люстр</P>
+<p>Штробление стен</p>
+<p>разбоработка электрического щита</P>
+<p>Демонтаж старой электропроводки</P>
+<p>Демонтаж/Монтаж старых и новых выключателей и розеток</P>
+<p>Монтаж эл.Щита и защитного отключения</p>
+    </section>
+
+   <section id="gallery">
+        <h2>Наши работы</h2>
+        <div class="gallery">
+            <!-- Замените названия файлов на ваши 7 фото -->
+            <div class="gallery-item">
+                <img src="images/photo1.jpg" alt="Проект 1" class="gallery-img">
+                
+            <div class="gallery-item">
+                <img src="images/photo2.jpg" alt="Проект 2" class="gallery-img">
+                            <div class="gallery-item">
+                <img src="images/photo3.jpg" alt="Проект 3" class="gallery-img">
+                
+            <div class="gallery-item">
+                <img src="images/photo4.jpg" alt="Проект 4" class="gallery-img">
+                
+            <div class="gallery-item">
+                <img src="images/photo5.jpg" alt="Проект 5" class="gallery-img">
+                
+            <div class="gallery-item">
+                <img src="images/photo6.jpg" alt="Проект 6" class="gallery-img">
+                            <div class="gallery-item">
+                <img src="images/photo7.jpg" alt="Проект 7" class="gallery-img">
+                
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Свяжитесь с нами</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon whatsapp">📱</div>
+                <a href="https://wa.me/79263100607" class="contact-link" target="_blank">
+                    WhatsApp: +7 (926) 310-06-07
+                </a>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon telegram">✈️</div>
+                <a href="https://t.me/Mes1k" class="contact-link" target="_blank">
+                    Telegram: @Mes1k
+                </a>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon phone">📞</div>
+                <a href="tel:+79263100607" class="contact-link">
+                    Телефон: +7 (926) 310-06-07
+                </a>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon email">📧</div>
+                <a href="mailto:ka3am@mail.ru" class="contact-link">
+                    Email: ka3am@mail.ru
+                </a>
+            </div>
+        </div>
+        
+        <a href="#home" class="btn">На главную</a>
+    </section>
+</body>
+</html>
+</body>
+</html>
